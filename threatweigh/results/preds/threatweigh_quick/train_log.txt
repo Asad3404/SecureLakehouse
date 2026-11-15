@@ -1,8 +1,0 @@
-=== threatweigh_quick on cpu | {'encoder': 'sbert', 'pooling': 'weighted', 'use_exp': True, 'use_kw': True, 'name': 'threatweigh', 'checkpoint': 'sentence-transformers/all-MiniLM-L6-v2', 'both_weight': 10, 'one_weight': 1} | train=300 val=100 test=200 | epochs<=2
-  [AV] epoch 1: loss=1.0951 val_acc=0.7400 (9s)
-  [AV] epoch 2: loss=0.6889 val_acc=0.7400 (8s)
-  [AV] early stopping
-  [AV] seed 42: best val acc=0.7400  TEST acc=0.7400  (0.4 min)
-  [UI] epoch 1: loss=0.6605 val_acc=0.6200 (8s)
-  [UI] epoch 2: loss=0.5614 val_acc=0.6700 (9s)
-  [UI] seed 42: best val acc=0.6700  TEST acc=0.7750  (0.3 min)

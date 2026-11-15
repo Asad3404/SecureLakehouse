@@ -1,3 +1,4 @@
 === threatweigh_budget on cpu | {'encoder': 'sbert', 'pooling': 'weighted', 'use_exp': True, 'use_kw': True, 'name': 'threatweigh', 'checkpoint': 'sentence-transformers/all-MiniLM-L6-v2', 'both_weight': 10, 'one_weight': 1} | train=2000 val=500 test=2000 | epochs<=3
-  [AV] epoch 1: loss=0.6648 val_acc=0.8300 (52s)
+  [AV] epoch 1: loss=0.6648 val_acc=0.8300 (49s)
   [AV] epoch 2: loss=0.4259 val_acc=0.8380 (51s)
+  [AV] epoch 3: loss=0.3282 val_acc=0.8520 (52s)

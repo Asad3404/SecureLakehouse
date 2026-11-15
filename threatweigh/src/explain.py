@@ -169,10 +169,34 @@ def deletion_auc(model, ids, w, token_attr, target, order="attr", rng=None, step
     return float(np.trapezoid(probs, dx=1 / steps))
 
 
+def sensitivity_max_ig(model, tokenizer, embeds, mask, w, target, kind, steps, attr,
+                       radius=0.01, n_perturb=3, seed=0):
+    """
+    Explanation sensitivity (Yeh et al., 2019, the quantity behind Captum's
+    sensitivity_max):  max over random perturbations delta, |delta| <= radius, of
+        || IG(x + delta) - IG(x) || / || IG(x) ||
+    Lower = the explanation is more stable. (Implemented directly because Captum's
+    helper mis-shapes batches of token embeddings.)
+    """
+    from captum.attr import IntegratedGradients
+
+    ig = IntegratedGradients(make_forward(model))
+    gen = torch.Generator().manual_seed(seed)
+    base_norm = attr.norm().item() + 1e-12
+    worst = 0.0
+    for _ in range(n_perturb):
+        delta = (torch.rand(embeds.shape, generator=gen) * 2 - 1) * radius
+        x = embeds + delta
+        a = ig.attribute(x, baselines=reference(kind, x, model, tokenizer), additional_forward_args=(mask, w),
+                         target=target, n_steps=steps, internal_batch_size=steps)
+        worst = max(worst, (a - attr).norm().item() / base_norm)
+    return worst
+
+
 def explain_model(run_name: str, metric: str, cfg: dict, sample: pd.DataFrame, kw_lists, kinds, steps,
                   n_sens: int, n_infid: int):
     """Run IG + all quantitative checks for one model and one metric."""
-    from captum.metrics import infidelity, sensitivity_max
+    from captum.metrics import infidelity
 
     model, tok, exp, labels = load_trained(run_name, metric, cfg)
     cues = expert_cues(metric, cfg)
@@ -188,6 +212,8 @@ def explain_model(run_name: str, metric: str, cfg: dict, sample: pd.DataFrame, k
         target = int(probs.argmax())
         lex_spans = find_spans(row.text, cues)
         for kind in kinds:
+            if kind != kinds[0] and n >= cfg["explain"]["n_second_baseline"]:
+                continue  # the second reference baseline is only compared on the first CVEs (cost)
             attr, embeds = integrated_gradients(model, tok, ids, mask, w, target, kind, steps)
             tok_attr = attr.sum(-1)[0].detach().numpy()
             words = top_words(word_attributions(row.text, offsets, tok_attr), cfg["explain"]["top_k"])
@@ -206,20 +232,14 @@ def explain_model(run_name: str, metric: str, cfg: dict, sample: pd.DataFrame, k
                                               target=target, n_perturb_samples=cfg["explain"]["infidelity_perturbations"]
                                               ).item())
             if n < n_sens:
-                def explain_fn(inp, mask_, w_):
-                    from captum.attr import IntegratedGradients
-                    return IntegratedGradients(fwd).attribute(
-                        inp, baselines=reference(kind, inp, model, tok), additional_forward_args=(mask_, w_),
-                        target=target, n_steps=max(4, steps // 2), internal_batch_size=steps)
-                st["sens"].append(sensitivity_max(explain_fn, embeds, perturb_radius=0.01, n_perturb_samples=3,
-                                                  additional_forward_args=(mask, w)).item())
+                st["sens"].append(sensitivity_max_ig(model, tok, embeds, mask, w, target, kind, steps, attr))
             if kind == kinds[0] and n < 8:
                 examples.append({"ID": row.ID, "text": row.text, "true": getattr(row, metric), "pred": labels[target],
                                  "conf": float(probs[target]),
                                  "top": [(x[0], round(x[3], 3), in_lexicon(x, lex_spans)) for x in words]})
     rows = []
     for kind, st in per_kind.items():
-        rows.append({"run": run_name, "metric": metric.upper(), "baseline": kind, "n": len(sample),
+        rows.append({"run": run_name, "metric": metric.upper(), "baseline": kind, "n": len(st["del"]),
                      "noise_rate_%": 100 * np.mean(st["noise"]), "lexicon_hit_%": 100 * np.mean(st["lex"]),
                      "infidelity": np.mean(st["infid"]) if st["infid"] else np.nan,
                      "sensitivity": np.mean(st["sens"]) if st["sens"] else np.nan,

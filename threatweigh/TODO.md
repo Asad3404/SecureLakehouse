@@ -3,11 +3,11 @@
 Legend: [x] done · [~] in progress · [ ] not started
 
 1. [x] Setup, data download, EDA (`src/data.py`)
-2. [x] `src/cvss.py` + unit tests (note: brief's 4.6 example is really 4.3)
-3. [~] Expert lexicons (`src/lexicon.py`, `lexicons/*.json`) + KeyBERT cache (`src/keybert_cache.py`)
-4. [ ] Baselines: TF-IDF+LR, plain SBERT (mean pooling), DistilBERT (`src/baselines.py`)
-5. [ ] ThreatWeigh model + training (`src/model.py`, `src/train.py`)
-6. [ ] Ablations (a–d), 3 seeds, bootstrap CI, weight sensitivity, time-aware split
-7. [ ] Explainability: Captum IG, top-10 tokens, noise rate, infidelity/sensitivity/deletion-AUC (`src/explain.py`)
-8. [ ] Streamlit UI (`app.py`) + CLI (`predict.py`)
-9. [ ] README + final results summary
+2. [x] `src/cvss.py` + unit tests (brief's 4.6 example is really 4.3; verified against all 110k dataset scores)
+3. [x] Expert lexicons (`src/lexicon.py`, `lexicons/*.json`, coverage 85.4%) + KeyBERT cache (`src/keybert_cache.py`)
+4. [~] Baselines: TF-IDF+LR [x], plain SBERT [ ], DistilBERT [ ] (`src/baselines.py`)
+5. [~] ThreatWeigh model + training (`src/model.py`, `src/train.py`) — code + tests done, budget run in progress
+6. [ ] Ablations (a–d), 3 seeds, bootstrap CI, weight sensitivity, time-aware split (queued in run_all.sh)
+7. [~] Explainability (`src/explain.py`) — smoke-tested on quick models; full run queued
+8. [~] Streamlit UI (`app.py`) + CLI (`predict.py`) — written, test once budget models exist
+9. [~] README (draft) + final results summary

@@ -1,0 +1,17 @@
+run,seed,metric,accuracy,macro_precision,macro_recall,macro_f1,score_mse,score_mae
+tfidf_lr_budget,42,a,0.844,0.7281,0.5896,0.6038,3.3831,1.1246
+tfidf_lr_budget,42,ac,0.95,0.915,0.6149,0.6705,3.3831,1.1246
+tfidf_lr_budget,42,av,0.8655,0.7394,0.4357,0.4682,3.3831,1.1246
+tfidf_lr_budget,42,c,0.8,0.8067,0.7297,0.7594,3.3831,1.1246
+tfidf_lr_budget,42,i,0.8015,0.8244,0.7666,0.7886,3.3831,1.1246
+tfidf_lr_budget,42,pr,0.793,0.7861,0.6406,0.6843,3.3831,1.1246
+tfidf_lr_budget,42,s,0.955,0.9576,0.8747,0.9098,3.3831,1.1246
+tfidf_lr_budget,42,ui,0.8965,0.8962,0.8666,0.8789,3.3831,1.1246
+tfidf_lr_fulltrain_budget,42,a,0.8945,0.8679,0.6709,0.7079,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,ac,0.958,0.9387,0.6789,0.7476,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,av,0.9265,0.8756,0.7792,0.8199,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,c,0.8705,0.8625,0.8366,0.8481,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,i,0.877,0.8828,0.8594,0.8698,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,pr,0.8695,0.8557,0.7853,0.8146,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,s,0.966,0.9501,0.9231,0.9359,1.7136,0.6735
+tfidf_lr_fulltrain_budget,42,ui,0.9435,0.942,0.9295,0.9353,1.7136,0.6735

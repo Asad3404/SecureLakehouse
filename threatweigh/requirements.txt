@@ -1,0 +1,22 @@
+# ThreatWeigh - tested with Python 3.13 on CPU.
+#
+# Install PyTorch FIRST from the CPU-only index (about 200 MB). The default PyPI
+# build bundles CUDA libraries (several GB). With an NVIDIA GPU, use the matching
+# CUDA index from https://pytorch.org instead.
+#   pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+torch==2.15.0
+transformers==5.23.0
+sentence-transformers==6.3.0
+keybert==0.9.0
+captum==0.9.0
+streamlit==1.67.0
+scikit-learn==1.9.1
+scipy==1.18.1
+pandas==3.0.5
+numpy==2.5.3
+matplotlib==3.11.2
+PyYAML==6.0.3
+requests==2.34.2
+tabulate==0.10.0
+pytest==9.2.0

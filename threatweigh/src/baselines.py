@@ -44,6 +44,9 @@ def run_tfidf(cfg: dict, full_train: bool = False, temporal: bool = False) -> st
     run_name = f"{name}{'_temporal' if temporal else ''}_{cfg['run']['profile']}"
     out_dir = path(cfg["paths"]["results_dir"]) / "preds" / run_name
     out_dir.mkdir(parents=True, exist_ok=True)
+    if all((out_dir / f"{m}_seed{cfg['seed']}.csv").exists() for m in metric_names(cfg)):
+        print(f"skip {run_name} (already done)")
+        return run_name
 
     # Word uni+bi-grams, sub-linear term frequency. Fitted on the training rows only.
     vec = TfidfVectorizer(ngram_range=(1, 2), min_df=2, sublinear_tf=True, max_features=200_000)

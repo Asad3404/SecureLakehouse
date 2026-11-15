@@ -100,7 +100,8 @@ profiles:
 
 explain:
   n_samples: 500          # test CVEs used for the quantitative checks
-  n_sensitivity: 50       # sensitivity_max is expensive -> smaller subsample
+  n_sensitivity: 30       # sensitivity is expensive (3 extra IG runs each) -> smaller subsample
+  n_second_baseline: 100  # the all-ones reference baseline is compared on the first 100 CVEs
   ig_steps: 16
   top_k: 10
   infidelity_perturbations: 10
