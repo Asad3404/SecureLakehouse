@@ -1,0 +1,18 @@
+{
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.23713999961316584,
+   "val_acc": 0.948,
+   "seconds": 55.2
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.17436766574531792,
+   "val_acc": 0.948,
+   "seconds": 55.0
+  }
+ ],
+ "best_val_acc": 0.948,
+ "minutes": 2.0045442541440326
+}
