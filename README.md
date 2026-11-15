@@ -65,6 +65,25 @@ designed *for* the execution engine, not added on top of it.
 
 Details per module are in [docs/architecture.md](docs/architecture.md).
 
+## Demo video
+
+[![SecureLakehouse demo video](docs/media/securelakehouse-demo-poster.png)](docs/media/securelakehouse-demo.mp4)
+
+[`docs/media/securelakehouse-demo.mp4`](docs/media/securelakehouse-demo.mp4) is a 3 min 51 s
+walkthrough with captions and no audio. It has eight chapters:
+1. intro
+2. project structure
+3. envelope encryption, including what raw Parquet and the keystore actually contain
+4. the write, read and oversight data flow
+5. the Spark executor-isolation bug and its fix
+6. the real output of `demo/run_demo.py`
+7. the live Streamlit dashboard: roles, breach replay, alerts, and tampering caught
+8. test results
+
+Nothing in it is mocked. Numbers and terminal output come from a real run, and
+the dashboard segment is a recorded browser session. Regenerate it with
+`bash demo/video/make_video.sh`, which needs Node with Playwright, and ffmpeg.
+
 ## Quick start
 
 Requirements: Python 3.10+ and a Java runtime (JDK 17 or 21) for Spark. Tested
@@ -184,6 +203,7 @@ pipeline/
   context.py         open_lakehouse(): single wiring point for all entry points
 demo/
   run_demo.py        narrated end-to-end story
+  video/             demo-video generator (storyboard + Playwright recorder)
   scenario.py        scripted workday + breach, simulated clock, tamper helper
   render.py          text tables/banners
 data/raw/employees.csv   12 clearly fake employees (9xx SSNs, example.com)

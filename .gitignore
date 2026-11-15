@@ -12,3 +12,4 @@ demo_output/
 *.jsonl
 keystore*.json
 app_workspace/
+demo/video/assets.js
