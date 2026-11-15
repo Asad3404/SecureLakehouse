@@ -9,5 +9,5 @@ Legend: [x] done · [~] in progress · [ ] not started
 5. [~] ThreatWeigh model + training (`src/model.py`, `src/train.py`) — code + tests done, budget run in progress
 6. [ ] Ablations (a–d), 3 seeds, bootstrap CI, weight sensitivity, time-aware split (queued in run_all.sh)
 7. [~] Explainability (`src/explain.py`) — smoke-tested on quick models; full run queued
-8. [~] Streamlit UI (`app.py`) + CLI (`predict.py`) — written, test once budget models exist
+8. [x] Streamlit UI (`app.py`) + CLI (`predict.py`) — tested with Playwright on budget models (3 tabs, no errors)
 9. [~] README (draft) + final results summary
