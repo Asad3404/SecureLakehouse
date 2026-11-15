@@ -1,0 +1,458 @@
+{
+  "metric": "c",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "H": [
+      "execute arbitrary code",
+      "arbitrary code execution",
+      "remote code execution",
+      "code execution",
+      "command injection",
+      "execute arbitrary commands",
+      "sql injection",
+      "read arbitrary files",
+      "arbitrary file read",
+      "gain privileges",
+      "gain root",
+      "privilege escalation",
+      "take over",
+      "complete control",
+      "full control",
+      "credentials",
+      "password",
+      "private key",
+      "obtain sensitive information",
+      "sensitive information",
+      "buffer overflow",
+      "use-after-free"
+    ],
+    "L": [
+      "cross-site scripting",
+      "xss",
+      "inject arbitrary web script",
+      "potentially sensitive information",
+      "version information",
+      "path disclosure",
+      "full path",
+      "enumerate",
+      "username enumeration",
+      "limited information",
+      "some information",
+      "html injection",
+      "open redirect"
+    ],
+    "N": [
+      "denial of service",
+      "crash",
+      "consume",
+      "cpu consumption",
+      "memory consumption",
+      "resource consumption",
+      "reboot",
+      "hang",
+      "infinite loop",
+      "null pointer dereference",
+      "assertion failure",
+      "deadlock",
+      "spoof",
+      "spoofing"
+    ]
+  },
+  "all_cues": [
+    "arbitrary code execution",
+    "arbitrary file read",
+    "assertion failure",
+    "buffer overflow",
+    "code execution",
+    "command injection",
+    "complete control",
+    "consume",
+    "cpu consumption",
+    "crash",
+    "credentials",
+    "cross-site scripting",
+    "deadlock",
+    "denial of service",
+    "enumerate",
+    "execute arbitrary code",
+    "execute arbitrary commands",
+    "full control",
+    "full path",
+    "gain privileges",
+    "gain root",
+    "hang",
+    "html injection",
+    "infinite loop",
+    "inject arbitrary web script",
+    "limited information",
+    "memory consumption",
+    "null pointer dereference",
+    "obtain sensitive information",
+    "open redirect",
+    "password",
+    "path disclosure",
+    "potentially sensitive information",
+    "private key",
+    "privilege escalation",
+    "read arbitrary files",
+    "reboot",
+    "remote code execution",
+    "resource consumption",
+    "sensitive information",
+    "some information",
+    "spoof",
+    "spoofing",
+    "sql injection",
+    "take over",
+    "use-after-free",
+    "username enumeration",
+    "version information",
+    "xss"
+  ],
+  "decision_tree": [
+    {
+      "question": "Can the attacker read all / any sensitive data (total loss of confidentiality)?",
+      "label": "H",
+      "kept": [
+        {
+          "cue": "execute arbitrary code",
+          "support": 5835,
+          "precision": 0.935,
+          "lift": 1.63
+        },
+        {
+          "cue": "arbitrary code execution",
+          "support": 1935,
+          "precision": 0.987,
+          "lift": 1.72
+        },
+        {
+          "cue": "remote code execution",
+          "support": 3777,
+          "precision": 0.978,
+          "lift": 1.7
+        },
+        {
+          "cue": "code execution",
+          "support": 7057,
+          "precision": 0.969,
+          "lift": 1.69
+        },
+        {
+          "cue": "command injection",
+          "support": 2084,
+          "precision": 0.985,
+          "lift": 1.72
+        },
+        {
+          "cue": "execute arbitrary commands",
+          "support": 900,
+          "precision": 0.983,
+          "lift": 1.71
+        },
+        {
+          "cue": "sql injection",
+          "support": 4890,
+          "precision": 0.978,
+          "lift": 1.7
+        },
+        {
+          "cue": "read arbitrary files",
+          "support": 401,
+          "precision": 0.895,
+          "lift": 1.56
+        },
+        {
+          "cue": "arbitrary file read",
+          "support": 123,
+          "precision": 0.943,
+          "lift": 1.64
+        },
+        {
+          "cue": "gain privileges",
+          "support": 746,
+          "precision": 0.968,
+          "lift": 1.69
+        },
+        {
+          "cue": "gain root",
+          "support": 158,
+          "precision": 0.994,
+          "lift": 1.73
+        },
+        {
+          "cue": "privilege escalation",
+          "support": 1449,
+          "precision": 0.916,
+          "lift": 1.6
+        },
+        {
+          "cue": "take over",
+          "support": 141,
+          "precision": 0.809,
+          "lift": 1.41
+        },
+        {
+          "cue": "complete control",
+          "support": 29,
+          "precision": 0.966,
+          "lift": 1.68
+        },
+        {
+          "cue": "full control",
+          "support": 124,
+          "precision": 0.911,
+          "lift": 1.59
+        },
+        {
+          "cue": "credentials",
+          "support": 3098,
+          "precision": 0.641,
+          "lift": 1.12
+        },
+        {
+          "cue": "password",
+          "support": 2839,
+          "precision": 0.8,
+          "lift": 1.39
+        },
+        {
+          "cue": "private key",
+          "support": 164,
+          "precision": 0.793,
+          "lift": 1.38
+        },
+        {
+          "cue": "obtain sensitive information",
+          "support": 1382,
+          "precision": 0.711,
+          "lift": 1.24
+        },
+        {
+          "cue": "sensitive information",
+          "support": 4067,
+          "precision": 0.747,
+          "lift": 1.3
+        },
+        {
+          "cue": "buffer overflow",
+          "support": 5033,
+          "precision": 0.783,
+          "lift": 1.36
+        },
+        {
+          "cue": "use-after-free",
+          "support": 1152,
+          "precision": 0.763,
+          "lift": 1.33
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "question": "Can the attacker read only some limited information?",
+      "label": "L",
+      "kept": [
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.978,
+          "lift": 4.69
+        },
+        {
+          "cue": "xss",
+          "support": 10029,
+          "precision": 0.97,
+          "lift": 4.65
+        },
+        {
+          "cue": "inject arbitrary web script",
+          "support": 939,
+          "precision": 0.99,
+          "lift": 4.75
+        },
+        {
+          "cue": "potentially sensitive information",
+          "support": 140,
+          "precision": 0.329,
+          "lift": 1.58
+        },
+        {
+          "cue": "version information",
+          "support": 27,
+          "precision": 0.593,
+          "lift": 2.84
+        },
+        {
+          "cue": "path disclosure",
+          "support": 38,
+          "precision": 0.895,
+          "lift": 4.29
+        },
+        {
+          "cue": "full path",
+          "support": 53,
+          "precision": 0.83,
+          "lift": 3.98
+        },
+        {
+          "cue": "enumerate",
+          "support": 226,
+          "precision": 0.748,
+          "lift": 3.58
+        },
+        {
+          "cue": "username enumeration",
+          "support": 23,
+          "precision": 0.826,
+          "lift": 3.96
+        },
+        {
+          "cue": "limited information",
+          "support": 25,
+          "precision": 0.96,
+          "lift": 4.6
+        },
+        {
+          "cue": "some information",
+          "support": 35,
+          "precision": 0.571,
+          "lift": 2.74
+        },
+        {
+          "cue": "html injection",
+          "support": 161,
+          "precision": 0.857,
+          "lift": 4.11
+        },
+        {
+          "cue": "open redirect",
+          "support": 404,
+          "precision": 0.906,
+          "lift": 4.34
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "information disclosure",
+          "support": 3763,
+          "precision": 0.142,
+          "lift": 0.68,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "csrf",
+          "support": 2840,
+          "precision": 0.069,
+          "lift": 0.33,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Is no information disclosed at all?",
+      "label": "N",
+      "kept": [
+        {
+          "cue": "denial of service",
+          "support": 11301,
+          "precision": 0.704,
+          "lift": 3.24
+        },
+        {
+          "cue": "crash",
+          "support": 4493,
+          "precision": 0.71,
+          "lift": 3.27
+        },
+        {
+          "cue": "consume",
+          "support": 252,
+          "precision": 0.675,
+          "lift": 3.11
+        },
+        {
+          "cue": "cpu consumption",
+          "support": 75,
+          "precision": 0.973,
+          "lift": 4.48
+        },
+        {
+          "cue": "memory consumption",
+          "support": 239,
+          "precision": 0.908,
+          "lift": 4.18
+        },
+        {
+          "cue": "resource consumption",
+          "support": 197,
+          "precision": 0.964,
+          "lift": 4.44
+        },
+        {
+          "cue": "reboot",
+          "support": 381,
+          "precision": 0.819,
+          "lift": 3.77
+        },
+        {
+          "cue": "hang",
+          "support": 702,
+          "precision": 0.94,
+          "lift": 4.33
+        },
+        {
+          "cue": "infinite loop",
+          "support": 359,
+          "precision": 0.981,
+          "lift": 4.51
+        },
+        {
+          "cue": "null pointer dereference",
+          "support": 1245,
+          "precision": 0.871,
+          "lift": 4.01
+        },
+        {
+          "cue": "assertion failure",
+          "support": 157,
+          "precision": 0.968,
+          "lift": 4.46
+        },
+        {
+          "cue": "deadlock",
+          "support": 46,
+          "precision": 1.0,
+          "lift": 4.6
+        },
+        {
+          "cue": "spoof",
+          "support": 487,
+          "precision": 0.513,
+          "lift": 2.36
+        },
+        {
+          "cue": "spoofing",
+          "support": 416,
+          "precision": 0.575,
+          "lift": 2.64
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "open redirect",
+          "support": 404,
+          "precision": 0.069,
+          "lift": 0.32,
+          "reason": "unreliable"
+        }
+      ]
+    }
+  ]
+}

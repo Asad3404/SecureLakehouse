@@ -1,0 +1,346 @@
+{
+  "metric": "ui",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "R": [
+      "convince a user",
+      "trick a user",
+      "tricking a user",
+      "victim",
+      "visit",
+      "visiting",
+      "click",
+      "clicking",
+      "open a crafted",
+      "opens a crafted",
+      "malicious link",
+      "crafted link",
+      "crafted web page",
+      "crafted web site",
+      "crafted document",
+      "crafted file",
+      "cross-site scripting",
+      "xss",
+      "csrf",
+      "cross-site request forgery",
+      "social engineering",
+      "phishing",
+      "persuade",
+      "entice",
+      "inject arbitrary web script",
+      "user-assisted"
+    ],
+    "N": [
+      "without user interaction",
+      "no user interaction",
+      "user interaction is not needed",
+      "unauthenticated",
+      "sql injection",
+      "crafted request",
+      "crafted http request",
+      "crafted packet",
+      "automatically",
+      "denial of service",
+      "remote code execution",
+      "command injection"
+    ]
+  },
+  "all_cues": [
+    "automatically",
+    "click",
+    "clicking",
+    "command injection",
+    "convince a user",
+    "crafted document",
+    "crafted file",
+    "crafted http request",
+    "crafted link",
+    "crafted packet",
+    "crafted request",
+    "crafted web page",
+    "crafted web site",
+    "cross-site request forgery",
+    "cross-site scripting",
+    "csrf",
+    "denial of service",
+    "entice",
+    "inject arbitrary web script",
+    "malicious link",
+    "no user interaction",
+    "open a crafted",
+    "opens a crafted",
+    "persuade",
+    "phishing",
+    "remote code execution",
+    "social engineering",
+    "sql injection",
+    "trick a user",
+    "tricking a user",
+    "unauthenticated",
+    "user interaction is not needed",
+    "user-assisted",
+    "victim",
+    "visit",
+    "visiting",
+    "without user interaction",
+    "xss"
+  ],
+  "decision_tree": [
+    {
+      "question": "Must a victim do something (click, visit, open a file) for the attack to work?",
+      "label": "R",
+      "kept": [
+        {
+          "cue": "convince a user",
+          "support": 74,
+          "precision": 0.973,
+          "lift": 2.8
+        },
+        {
+          "cue": "trick a user",
+          "support": 138,
+          "precision": 0.971,
+          "lift": 2.8
+        },
+        {
+          "cue": "tricking a user",
+          "support": 16,
+          "precision": 1.0,
+          "lift": 2.88
+        },
+        {
+          "cue": "victim",
+          "support": 1970,
+          "precision": 0.841,
+          "lift": 2.42
+        },
+        {
+          "cue": "visit",
+          "support": 1073,
+          "precision": 0.971,
+          "lift": 2.8
+        },
+        {
+          "cue": "visiting",
+          "support": 187,
+          "precision": 0.69,
+          "lift": 1.99
+        },
+        {
+          "cue": "click",
+          "support": 371,
+          "precision": 0.9,
+          "lift": 2.59
+        },
+        {
+          "cue": "clicking",
+          "support": 388,
+          "precision": 0.961,
+          "lift": 2.77
+        },
+        {
+          "cue": "open a crafted",
+          "support": 37,
+          "precision": 0.973,
+          "lift": 2.8
+        },
+        {
+          "cue": "opens a crafted",
+          "support": 13,
+          "precision": 1.0,
+          "lift": 2.88
+        },
+        {
+          "cue": "malicious link",
+          "support": 205,
+          "precision": 0.976,
+          "lift": 2.81
+        },
+        {
+          "cue": "crafted link",
+          "support": 227,
+          "precision": 0.982,
+          "lift": 2.83
+        },
+        {
+          "cue": "crafted web page",
+          "support": 40,
+          "precision": 0.975,
+          "lift": 2.81
+        },
+        {
+          "cue": "crafted web site",
+          "support": 326,
+          "precision": 0.991,
+          "lift": 2.86
+        },
+        {
+          "cue": "crafted document",
+          "support": 106,
+          "precision": 0.84,
+          "lift": 2.42
+        },
+        {
+          "cue": "crafted file",
+          "support": 958,
+          "precision": 0.849,
+          "lift": 2.45
+        },
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.991,
+          "lift": 2.86
+        },
+        {
+          "cue": "xss",
+          "support": 10029,
+          "precision": 0.991,
+          "lift": 2.86
+        },
+        {
+          "cue": "csrf",
+          "support": 2840,
+          "precision": 0.956,
+          "lift": 2.76
+        },
+        {
+          "cue": "cross-site request forgery",
+          "support": 1931,
+          "precision": 0.979,
+          "lift": 2.82
+        },
+        {
+          "cue": "social engineering",
+          "support": 63,
+          "precision": 0.714,
+          "lift": 2.06
+        },
+        {
+          "cue": "phishing",
+          "support": 258,
+          "precision": 0.919,
+          "lift": 2.65
+        },
+        {
+          "cue": "persuade",
+          "support": 12,
+          "precision": 0.917,
+          "lift": 2.64
+        },
+        {
+          "cue": "entice",
+          "support": 16,
+          "precision": 1.0,
+          "lift": 2.88
+        },
+        {
+          "cue": "inject arbitrary web script",
+          "support": 939,
+          "precision": 0.996,
+          "lift": 2.87
+        },
+        {
+          "cue": "user-assisted",
+          "support": 24,
+          "precision": 0.958,
+          "lift": 2.76
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "user interaction",
+          "support": 4423,
+          "precision": 0.442,
+          "lift": 1.27,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Can the attack succeed with no action from any user?",
+      "label": "N",
+      "kept": [
+        {
+          "cue": "without user interaction",
+          "support": 24,
+          "precision": 0.708,
+          "lift": 1.08
+        },
+        {
+          "cue": "no user interaction",
+          "support": 63,
+          "precision": 1.0,
+          "lift": 1.53
+        },
+        {
+          "cue": "user interaction is not needed",
+          "support": 2276,
+          "precision": 0.998,
+          "lift": 1.53
+        },
+        {
+          "cue": "unauthenticated",
+          "support": 7235,
+          "precision": 0.742,
+          "lift": 1.14
+        },
+        {
+          "cue": "sql injection",
+          "support": 4890,
+          "precision": 0.993,
+          "lift": 1.52
+        },
+        {
+          "cue": "crafted request",
+          "support": 431,
+          "precision": 0.821,
+          "lift": 1.26
+        },
+        {
+          "cue": "crafted http request",
+          "support": 414,
+          "precision": 0.913,
+          "lift": 1.4
+        },
+        {
+          "cue": "crafted packet",
+          "support": 256,
+          "precision": 0.98,
+          "lift": 1.5
+        },
+        {
+          "cue": "automatically",
+          "support": 195,
+          "precision": 0.749,
+          "lift": 1.15
+        },
+        {
+          "cue": "denial of service",
+          "support": 11301,
+          "precision": 0.716,
+          "lift": 1.1
+        },
+        {
+          "cue": "remote code execution",
+          "support": 3777,
+          "precision": 0.65,
+          "lift": 0.99
+        },
+        {
+          "cue": "command injection",
+          "support": 2084,
+          "precision": 0.96,
+          "lift": 1.47
+        }
+      ],
+      "dropped": []
+    }
+  ]
+}

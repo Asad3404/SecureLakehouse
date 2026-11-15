@@ -1,0 +1,735 @@
+{
+  "metric": "av",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "P": [
+      "physical access",
+      "physically proximate",
+      "physical proximity",
+      "physical attacker",
+      "usb",
+      "uart",
+      "unlocked device",
+      "lock screen",
+      "lockscreen",
+      "boot loader",
+      "bootloader",
+      "debug port"
+    ],
+    "A": [
+      "adjacent network",
+      "adjacent attacker",
+      "adjacent",
+      "same network segment",
+      "local network",
+      "same subnet",
+      "bluetooth",
+      "wi-fi",
+      "wifi",
+      "wlan",
+      "802.11",
+      "wireless",
+      "nfc",
+      "zigbee",
+      "layer 2",
+      "broadcast domain",
+      "within range"
+    ],
+    "L": [
+      "local users",
+      "local user",
+      "local attacker",
+      "locally",
+      "local access",
+      "local authenticated",
+      "local privilege escalation",
+      "escalate privileges",
+      "elevation of privilege",
+      "malicious application",
+      "crafted application",
+      "malicious app",
+      "kernel",
+      "driver",
+      "symlink attack",
+      "setuid",
+      "open a crafted",
+      "crafted file",
+      "local account",
+      "the local system",
+      "via a local"
+    ],
+    "N": [
+      "remote attackers",
+      "remote attacker",
+      "remotely",
+      "unauthenticated remote",
+      "over the network",
+      "via the network",
+      "network access",
+      "crafted http request",
+      "http request",
+      "crafted request",
+      "crafted url",
+      "web page",
+      "web site",
+      "website",
+      "sql injection",
+      "cross-site scripting",
+      "cross-site request forgery",
+      "csrf",
+      "xss",
+      "server-side request forgery",
+      "ssrf",
+      "parameter",
+      "api",
+      "endpoint",
+      "crafted packet",
+      "packets",
+      "network packet",
+      "web interface"
+    ]
+  },
+  "all_cues": [
+    "802.11",
+    "adjacent",
+    "adjacent attacker",
+    "adjacent network",
+    "api",
+    "bluetooth",
+    "boot loader",
+    "bootloader",
+    "broadcast domain",
+    "crafted application",
+    "crafted file",
+    "crafted http request",
+    "crafted packet",
+    "crafted request",
+    "crafted url",
+    "cross-site request forgery",
+    "cross-site scripting",
+    "csrf",
+    "debug port",
+    "driver",
+    "elevation of privilege",
+    "endpoint",
+    "escalate privileges",
+    "http request",
+    "kernel",
+    "layer 2",
+    "local access",
+    "local account",
+    "local attacker",
+    "local authenticated",
+    "local network",
+    "local privilege escalation",
+    "local user",
+    "local users",
+    "locally",
+    "lock screen",
+    "lockscreen",
+    "malicious app",
+    "malicious application",
+    "network access",
+    "network packet",
+    "nfc",
+    "open a crafted",
+    "over the network",
+    "packets",
+    "parameter",
+    "physical access",
+    "physical attacker",
+    "physical proximity",
+    "physically proximate",
+    "remote attacker",
+    "remote attackers",
+    "remotely",
+    "same network segment",
+    "same subnet",
+    "server-side request forgery",
+    "setuid",
+    "sql injection",
+    "ssrf",
+    "symlink attack",
+    "the local system",
+    "uart",
+    "unauthenticated remote",
+    "unlocked device",
+    "usb",
+    "via a local",
+    "via the network",
+    "web interface",
+    "web page",
+    "web site",
+    "website",
+    "wi-fi",
+    "wifi",
+    "wireless",
+    "within range",
+    "wlan",
+    "xss",
+    "zigbee"
+  ],
+  "decision_tree": [
+    {
+      "question": "Does the attacker need to physically touch or be next to the device?",
+      "label": "P",
+      "kept": [
+        {
+          "cue": "physical access",
+          "support": 361,
+          "precision": 0.903,
+          "lift": 86.15
+        },
+        {
+          "cue": "physically proximate",
+          "support": 130,
+          "precision": 0.838,
+          "lift": 79.99
+        },
+        {
+          "cue": "physical proximity",
+          "support": 13,
+          "precision": 0.538,
+          "lift": 51.37
+        },
+        {
+          "cue": "physical attacker",
+          "support": 42,
+          "precision": 0.952,
+          "lift": 90.85
+        },
+        {
+          "cue": "usb",
+          "support": 379,
+          "precision": 0.451,
+          "lift": 43.04
+        },
+        {
+          "cue": "uart",
+          "support": 32,
+          "precision": 0.719,
+          "lift": 68.57
+        },
+        {
+          "cue": "unlocked device",
+          "support": 5,
+          "precision": 1.0,
+          "lift": 95.4
+        },
+        {
+          "cue": "lock screen",
+          "support": 58,
+          "precision": 0.707,
+          "lift": 67.43
+        },
+        {
+          "cue": "lockscreen",
+          "support": 44,
+          "precision": 0.568,
+          "lift": 54.2
+        },
+        {
+          "cue": "boot loader",
+          "support": 17,
+          "precision": 0.176,
+          "lift": 16.83
+        },
+        {
+          "cue": "bootloader",
+          "support": 103,
+          "precision": 0.204,
+          "lift": 19.45
+        },
+        {
+          "cue": "debug port",
+          "support": 8,
+          "precision": 0.25,
+          "lift": 23.85
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "physically present",
+          "support": 4,
+          "precision": 1.0,
+          "lift": 95.4,
+          "reason": "too rare"
+        },
+        {
+          "cue": "jtag",
+          "support": 1,
+          "precision": 1.0,
+          "lift": 95.4,
+          "reason": "too rare"
+        },
+        {
+          "cue": "serial console",
+          "support": 5,
+          "precision": 0.0,
+          "lift": 0.0,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "evil maid",
+          "support": 0,
+          "precision": 0.0,
+          "lift": 0.0,
+          "reason": "too rare"
+        },
+        {
+          "cue": "physical presence",
+          "support": 2,
+          "precision": 1.0,
+          "lift": 95.4,
+          "reason": "too rare"
+        },
+        {
+          "cue": "attached to the device",
+          "support": 1,
+          "precision": 0.0,
+          "lift": 0.0,
+          "reason": "too rare"
+        }
+      ]
+    },
+    {
+      "question": "Is the attack limited to the same local/shared network segment (Bluetooth, Wi-Fi, LAN)?",
+      "label": "A",
+      "kept": [
+        {
+          "cue": "adjacent network",
+          "support": 49,
+          "precision": 0.959,
+          "lift": 46.48
+        },
+        {
+          "cue": "adjacent attacker",
+          "support": 180,
+          "precision": 0.983,
+          "lift": 47.65
+        },
+        {
+          "cue": "adjacent",
+          "support": 394,
+          "precision": 0.944,
+          "lift": 45.75
+        },
+        {
+          "cue": "same network segment",
+          "support": 27,
+          "precision": 0.926,
+          "lift": 44.86
+        },
+        {
+          "cue": "local network",
+          "support": 116,
+          "precision": 0.405,
+          "lift": 19.63
+        },
+        {
+          "cue": "same subnet",
+          "support": 13,
+          "precision": 0.769,
+          "lift": 37.27
+        },
+        {
+          "cue": "bluetooth",
+          "support": 487,
+          "precision": 0.487,
+          "lift": 23.58
+        },
+        {
+          "cue": "wi-fi",
+          "support": 400,
+          "precision": 0.235,
+          "lift": 11.39
+        },
+        {
+          "cue": "wifi",
+          "support": 277,
+          "precision": 0.238,
+          "lift": 11.55
+        },
+        {
+          "cue": "wlan",
+          "support": 265,
+          "precision": 0.079,
+          "lift": 3.84
+        },
+        {
+          "cue": "802.11",
+          "support": 32,
+          "precision": 0.594,
+          "lift": 28.77
+        },
+        {
+          "cue": "wireless",
+          "support": 541,
+          "precision": 0.237,
+          "lift": 11.46
+        },
+        {
+          "cue": "nfc",
+          "support": 103,
+          "precision": 0.165,
+          "lift": 8.0
+        },
+        {
+          "cue": "zigbee",
+          "support": 17,
+          "precision": 0.176,
+          "lift": 8.55
+        },
+        {
+          "cue": "layer 2",
+          "support": 69,
+          "precision": 0.739,
+          "lift": 35.81
+        },
+        {
+          "cue": "broadcast domain",
+          "support": 21,
+          "precision": 1.0,
+          "lift": 48.45
+        },
+        {
+          "cue": "within range",
+          "support": 6,
+          "precision": 0.833,
+          "lift": 40.38
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "same local area network",
+          "support": 4,
+          "precision": 1.0,
+          "lift": 48.45,
+          "reason": "too rare"
+        }
+      ]
+    },
+    {
+      "question": "Does the attacker need a local account, a local app, or to get a user to open a local file?",
+      "label": "L",
+      "kept": [
+        {
+          "cue": "local users",
+          "support": 1343,
+          "precision": 0.962,
+          "lift": 4.18
+        },
+        {
+          "cue": "local user",
+          "support": 726,
+          "precision": 0.944,
+          "lift": 4.1
+        },
+        {
+          "cue": "local attacker",
+          "support": 1385,
+          "precision": 0.934,
+          "lift": 4.06
+        },
+        {
+          "cue": "locally",
+          "support": 307,
+          "precision": 0.788,
+          "lift": 3.43
+        },
+        {
+          "cue": "local access",
+          "support": 1082,
+          "precision": 0.983,
+          "lift": 4.28
+        },
+        {
+          "cue": "local authenticated",
+          "support": 135,
+          "precision": 0.978,
+          "lift": 4.25
+        },
+        {
+          "cue": "local privilege escalation",
+          "support": 335,
+          "precision": 0.979,
+          "lift": 4.26
+        },
+        {
+          "cue": "escalate privileges",
+          "support": 579,
+          "precision": 0.585,
+          "lift": 2.55
+        },
+        {
+          "cue": "elevation of privilege",
+          "support": 1387,
+          "precision": 0.851,
+          "lift": 3.7
+        },
+        {
+          "cue": "malicious application",
+          "support": 604,
+          "precision": 0.937,
+          "lift": 4.08
+        },
+        {
+          "cue": "crafted application",
+          "support": 521,
+          "precision": 0.946,
+          "lift": 4.12
+        },
+        {
+          "cue": "malicious app",
+          "support": 49,
+          "precision": 0.755,
+          "lift": 3.28
+        },
+        {
+          "cue": "kernel",
+          "support": 3820,
+          "precision": 0.802,
+          "lift": 3.49
+        },
+        {
+          "cue": "driver",
+          "support": 2086,
+          "precision": 0.82,
+          "lift": 3.57
+        },
+        {
+          "cue": "symlink attack",
+          "support": 33,
+          "precision": 0.879,
+          "lift": 3.82
+        },
+        {
+          "cue": "setuid",
+          "support": 76,
+          "precision": 0.816,
+          "lift": 3.55
+        },
+        {
+          "cue": "open a crafted",
+          "support": 37,
+          "precision": 0.622,
+          "lift": 2.7
+        },
+        {
+          "cue": "crafted file",
+          "support": 958,
+          "precision": 0.644,
+          "lift": 2.8
+        },
+        {
+          "cue": "local account",
+          "support": 23,
+          "precision": 0.652,
+          "lift": 2.84
+        },
+        {
+          "cue": "the local system",
+          "support": 72,
+          "precision": 0.694,
+          "lift": 3.02
+        },
+        {
+          "cue": "via a local",
+          "support": 16,
+          "precision": 0.75,
+          "lift": 3.26
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "logged-in user",
+          "support": 80,
+          "precision": 0.075,
+          "lift": 0.33,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Can it be exploited remotely, across the network or the Internet?",
+      "label": "N",
+      "kept": [
+        {
+          "cue": "remote attackers",
+          "support": 8098,
+          "precision": 0.808,
+          "lift": 1.09
+        },
+        {
+          "cue": "remote attacker",
+          "support": 5959,
+          "precision": 0.968,
+          "lift": 1.31
+        },
+        {
+          "cue": "remotely",
+          "support": 2498,
+          "precision": 0.964,
+          "lift": 1.3
+        },
+        {
+          "cue": "unauthenticated remote",
+          "support": 572,
+          "precision": 0.97,
+          "lift": 1.31
+        },
+        {
+          "cue": "over the network",
+          "support": 105,
+          "precision": 0.952,
+          "lift": 1.29
+        },
+        {
+          "cue": "via the network",
+          "support": 9,
+          "precision": 1.0,
+          "lift": 1.35
+        },
+        {
+          "cue": "network access",
+          "support": 2908,
+          "precision": 0.988,
+          "lift": 1.34
+        },
+        {
+          "cue": "crafted http request",
+          "support": 414,
+          "precision": 0.988,
+          "lift": 1.34
+        },
+        {
+          "cue": "http request",
+          "support": 1089,
+          "precision": 0.983,
+          "lift": 1.33
+        },
+        {
+          "cue": "crafted request",
+          "support": 431,
+          "precision": 0.923,
+          "lift": 1.25
+        },
+        {
+          "cue": "crafted url",
+          "support": 401,
+          "precision": 0.995,
+          "lift": 1.35
+        },
+        {
+          "cue": "web page",
+          "support": 612,
+          "precision": 0.984,
+          "lift": 1.33
+        },
+        {
+          "cue": "web site",
+          "support": 495,
+          "precision": 0.978,
+          "lift": 1.32
+        },
+        {
+          "cue": "website",
+          "support": 737,
+          "precision": 0.958,
+          "lift": 1.3
+        },
+        {
+          "cue": "sql injection",
+          "support": 4890,
+          "precision": 0.991,
+          "lift": 1.34
+        },
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.998,
+          "lift": 1.35
+        },
+        {
+          "cue": "cross-site request forgery",
+          "support": 1931,
+          "precision": 0.999,
+          "lift": 1.35
+        },
+        {
+          "cue": "csrf",
+          "support": 2840,
+          "precision": 0.995,
+          "lift": 1.35
+        },
+        {
+          "cue": "xss",
+          "support": 10029,
+          "precision": 0.997,
+          "lift": 1.35
+        },
+        {
+          "cue": "server-side request forgery",
+          "support": 399,
+          "precision": 0.967,
+          "lift": 1.31
+        },
+        {
+          "cue": "ssrf",
+          "support": 635,
+          "precision": 0.972,
+          "lift": 1.31
+        },
+        {
+          "cue": "parameter",
+          "support": 7646,
+          "precision": 0.962,
+          "lift": 1.3
+        },
+        {
+          "cue": "api",
+          "support": 2738,
+          "precision": 0.894,
+          "lift": 1.21
+        },
+        {
+          "cue": "endpoint",
+          "support": 1220,
+          "precision": 0.829,
+          "lift": 1.12
+        },
+        {
+          "cue": "crafted packet",
+          "support": 256,
+          "precision": 0.891,
+          "lift": 1.21
+        },
+        {
+          "cue": "packets",
+          "support": 1122,
+          "precision": 0.799,
+          "lift": 1.08
+        },
+        {
+          "cue": "network packet",
+          "support": 110,
+          "precision": 0.927,
+          "lift": 1.25
+        },
+        {
+          "cue": "web interface",
+          "support": 730,
+          "precision": 0.955,
+          "lift": 1.29
+        }
+      ],
+      "dropped": []
+    }
+  ]
+}

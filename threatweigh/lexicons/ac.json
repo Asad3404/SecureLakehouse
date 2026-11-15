@@ -1,0 +1,294 @@
+{
+  "metric": "ac",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "H": [
+      "race condition",
+      "time-of-check",
+      "toctou",
+      "man-in-the-middle",
+      "mitm",
+      "timing attack",
+      "side-channel",
+      "side channel",
+      "padding oracle",
+      "brute force",
+      "non-default configuration",
+      "under certain conditions",
+      "intercept",
+      "downgrade",
+      "predict",
+      "spoof",
+      "cryptographic",
+      "privileged network position",
+      "difficult to exploit"
+    ],
+    "L": [
+      "unauthenticated",
+      "without authentication",
+      "crafted request",
+      "crafted http request",
+      "sql injection",
+      "cross-site scripting",
+      "default configuration",
+      "easily",
+      "trivially"
+    ]
+  },
+  "all_cues": [
+    "brute force",
+    "crafted http request",
+    "crafted request",
+    "cross-site scripting",
+    "cryptographic",
+    "default configuration",
+    "difficult to exploit",
+    "downgrade",
+    "easily",
+    "intercept",
+    "man-in-the-middle",
+    "mitm",
+    "non-default configuration",
+    "padding oracle",
+    "predict",
+    "privileged network position",
+    "race condition",
+    "side channel",
+    "side-channel",
+    "spoof",
+    "sql injection",
+    "time-of-check",
+    "timing attack",
+    "toctou",
+    "trivially",
+    "unauthenticated",
+    "under certain conditions",
+    "without authentication"
+  ],
+  "decision_tree": [
+    {
+      "question": "Does success depend on conditions outside the attacker's control (race, timing, MITM, config)?",
+      "label": "H",
+      "kept": [
+        {
+          "cue": "race condition",
+          "support": 691,
+          "precision": 0.933,
+          "lift": 15.38
+        },
+        {
+          "cue": "time-of-check",
+          "support": 60,
+          "precision": 0.983,
+          "lift": 16.2
+        },
+        {
+          "cue": "toctou",
+          "support": 100,
+          "precision": 0.98,
+          "lift": 16.15
+        },
+        {
+          "cue": "man-in-the-middle",
+          "support": 596,
+          "precision": 0.97,
+          "lift": 15.98
+        },
+        {
+          "cue": "mitm",
+          "support": 287,
+          "precision": 0.944,
+          "lift": 15.56
+        },
+        {
+          "cue": "timing attack",
+          "support": 44,
+          "precision": 0.659,
+          "lift": 10.86
+        },
+        {
+          "cue": "side-channel",
+          "support": 87,
+          "precision": 0.471,
+          "lift": 7.76
+        },
+        {
+          "cue": "side channel",
+          "support": 136,
+          "precision": 0.213,
+          "lift": 3.51
+        },
+        {
+          "cue": "padding oracle",
+          "support": 25,
+          "precision": 0.88,
+          "lift": 14.5
+        },
+        {
+          "cue": "brute force",
+          "support": 216,
+          "precision": 0.097,
+          "lift": 1.6
+        },
+        {
+          "cue": "non-default configuration",
+          "support": 15,
+          "precision": 0.133,
+          "lift": 2.2
+        },
+        {
+          "cue": "under certain conditions",
+          "support": 211,
+          "precision": 0.137,
+          "lift": 2.26
+        },
+        {
+          "cue": "intercept",
+          "support": 170,
+          "precision": 0.476,
+          "lift": 7.85
+        },
+        {
+          "cue": "downgrade",
+          "support": 57,
+          "precision": 0.298,
+          "lift": 4.91
+        },
+        {
+          "cue": "predict",
+          "support": 36,
+          "precision": 0.194,
+          "lift": 3.2
+        },
+        {
+          "cue": "spoof",
+          "support": 487,
+          "precision": 0.359,
+          "lift": 5.92
+        },
+        {
+          "cue": "cryptographic",
+          "support": 469,
+          "precision": 0.149,
+          "lift": 2.46
+        },
+        {
+          "cue": "privileged network position",
+          "support": 55,
+          "precision": 0.545,
+          "lift": 8.99
+        },
+        {
+          "cue": "difficult to exploit",
+          "support": 539,
+          "precision": 0.97,
+          "lift": 15.99
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "specific configuration",
+          "support": 17,
+          "precision": 0.0,
+          "lift": 0.0,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "certain configurations",
+          "support": 46,
+          "precision": 0.087,
+          "lift": 1.43,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "cache poisoning",
+          "support": 77,
+          "precision": 0.091,
+          "lift": 1.5,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "dns rebinding",
+          "support": 39,
+          "precision": 0.051,
+          "lift": 0.84,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "high complexity",
+          "support": 2,
+          "precision": 1.0,
+          "lift": 16.48,
+          "reason": "too rare"
+        }
+      ]
+    },
+    {
+      "question": "Can the attacker succeed repeatedly at will, with no special conditions?",
+      "label": "L",
+      "kept": [
+        {
+          "cue": "unauthenticated",
+          "support": 7235,
+          "precision": 0.926,
+          "lift": 0.99
+        },
+        {
+          "cue": "without authentication",
+          "support": 284,
+          "precision": 0.979,
+          "lift": 1.04
+        },
+        {
+          "cue": "crafted request",
+          "support": 431,
+          "precision": 0.963,
+          "lift": 1.03
+        },
+        {
+          "cue": "crafted http request",
+          "support": 414,
+          "precision": 0.988,
+          "lift": 1.05
+        },
+        {
+          "cue": "sql injection",
+          "support": 4890,
+          "precision": 0.99,
+          "lift": 1.05
+        },
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.997,
+          "lift": 1.06
+        },
+        {
+          "cue": "default configuration",
+          "support": 162,
+          "precision": 0.895,
+          "lift": 0.95
+        },
+        {
+          "cue": "easily",
+          "support": 2519,
+          "precision": 0.992,
+          "lift": 1.06
+        },
+        {
+          "cue": "trivially",
+          "support": 23,
+          "precision": 0.957,
+          "lift": 1.02
+        }
+      ],
+      "dropped": []
+    }
+  ]
+}

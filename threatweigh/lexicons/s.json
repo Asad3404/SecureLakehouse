@@ -1,0 +1,285 @@
+{
+  "metric": "s",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "C": [
+      "cross-site scripting",
+      "xss",
+      "inject arbitrary web script",
+      "stored xss",
+      "sandbox escape",
+      "escape the sandbox",
+      "sandbox",
+      "guest",
+      "hypervisor",
+      "virtual machine",
+      "container escape",
+      "other users",
+      "html injection",
+      "javascript"
+    ],
+    "U": [
+      "denial of service",
+      "sql injection",
+      "buffer overflow",
+      "out-of-bounds",
+      "null pointer",
+      "use-after-free",
+      "execute arbitrary code",
+      "command injection",
+      "obtain sensitive information",
+      "crash",
+      "memory corruption",
+      "integer overflow"
+    ]
+  },
+  "all_cues": [
+    "buffer overflow",
+    "command injection",
+    "container escape",
+    "crash",
+    "cross-site scripting",
+    "denial of service",
+    "escape the sandbox",
+    "execute arbitrary code",
+    "guest",
+    "html injection",
+    "hypervisor",
+    "inject arbitrary web script",
+    "integer overflow",
+    "javascript",
+    "memory corruption",
+    "null pointer",
+    "obtain sensitive information",
+    "other users",
+    "out-of-bounds",
+    "sandbox",
+    "sandbox escape",
+    "sql injection",
+    "stored xss",
+    "use-after-free",
+    "virtual machine",
+    "xss"
+  ],
+  "decision_tree": [
+    {
+      "question": "Does the attack reach beyond the vulnerable component (browser of another user, host, other tenants)?",
+      "label": "C",
+      "kept": [
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.985,
+          "lift": 5.5
+        },
+        {
+          "cue": "xss",
+          "support": 10029,
+          "precision": 0.981,
+          "lift": 5.48
+        },
+        {
+          "cue": "inject arbitrary web script",
+          "support": 939,
+          "precision": 0.991,
+          "lift": 5.54
+        },
+        {
+          "cue": "stored xss",
+          "support": 1183,
+          "precision": 0.981,
+          "lift": 5.47
+        },
+        {
+          "cue": "sandbox escape",
+          "support": 112,
+          "precision": 0.821,
+          "lift": 4.59
+        },
+        {
+          "cue": "escape the sandbox",
+          "support": 11,
+          "precision": 0.818,
+          "lift": 4.57
+        },
+        {
+          "cue": "sandbox",
+          "support": 597,
+          "precision": 0.447,
+          "lift": 2.5
+        },
+        {
+          "cue": "guest",
+          "support": 860,
+          "precision": 0.459,
+          "lift": 2.56
+        },
+        {
+          "cue": "hypervisor",
+          "support": 132,
+          "precision": 0.523,
+          "lift": 2.92
+        },
+        {
+          "cue": "virtual machine",
+          "support": 125,
+          "precision": 0.336,
+          "lift": 1.88
+        },
+        {
+          "cue": "container escape",
+          "support": 6,
+          "precision": 0.667,
+          "lift": 3.72
+        },
+        {
+          "cue": "other users",
+          "support": 434,
+          "precision": 0.281,
+          "lift": 1.57
+        },
+        {
+          "cue": "html injection",
+          "support": 161,
+          "precision": 0.857,
+          "lift": 4.79
+        },
+        {
+          "cue": "javascript",
+          "support": 2927,
+          "precision": 0.76,
+          "lift": 4.24
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "host operating system",
+          "support": 39,
+          "precision": 0.231,
+          "lift": 1.29,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "server-side request forgery",
+          "support": 399,
+          "precision": 0.095,
+          "lift": 0.53,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "ssrf",
+          "support": 635,
+          "precision": 0.165,
+          "lift": 0.92,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "trustzone",
+          "support": 39,
+          "precision": 0.077,
+          "lift": 0.43,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "secure world",
+          "support": 10,
+          "precision": 0.1,
+          "lift": 0.56,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "other tenants",
+          "support": 7,
+          "precision": 0.143,
+          "lift": 0.8,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Is the impact confined to the vulnerable component itself?",
+      "label": "U",
+      "kept": [
+        {
+          "cue": "denial of service",
+          "support": 11301,
+          "precision": 0.941,
+          "lift": 1.15
+        },
+        {
+          "cue": "sql injection",
+          "support": 4890,
+          "precision": 0.996,
+          "lift": 1.21
+        },
+        {
+          "cue": "buffer overflow",
+          "support": 5033,
+          "precision": 0.962,
+          "lift": 1.17
+        },
+        {
+          "cue": "out-of-bounds",
+          "support": 2517,
+          "precision": 0.966,
+          "lift": 1.18
+        },
+        {
+          "cue": "null pointer",
+          "support": 1388,
+          "precision": 0.981,
+          "lift": 1.19
+        },
+        {
+          "cue": "use-after-free",
+          "support": 1152,
+          "precision": 0.984,
+          "lift": 1.2
+        },
+        {
+          "cue": "execute arbitrary code",
+          "support": 5835,
+          "precision": 0.921,
+          "lift": 1.12
+        },
+        {
+          "cue": "command injection",
+          "support": 2084,
+          "precision": 0.972,
+          "lift": 1.18
+        },
+        {
+          "cue": "obtain sensitive information",
+          "support": 1382,
+          "precision": 0.936,
+          "lift": 1.14
+        },
+        {
+          "cue": "crash",
+          "support": 4493,
+          "precision": 0.936,
+          "lift": 1.14
+        },
+        {
+          "cue": "memory corruption",
+          "support": 2756,
+          "precision": 0.972,
+          "lift": 1.18
+        },
+        {
+          "cue": "integer overflow",
+          "support": 1460,
+          "precision": 0.975,
+          "lift": 1.19
+        }
+      ],
+      "dropped": []
+    }
+  ]
+}

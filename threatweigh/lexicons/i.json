@@ -1,0 +1,410 @@
+{
+  "metric": "i",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "H": [
+      "execute arbitrary code",
+      "arbitrary code execution",
+      "remote code execution",
+      "code execution",
+      "command injection",
+      "execute arbitrary commands",
+      "write arbitrary files",
+      "arbitrary file write",
+      "overwrite",
+      "upload arbitrary files",
+      "arbitrary file upload",
+      "unrestricted upload",
+      "gain privileges",
+      "privilege escalation",
+      "sql injection",
+      "delete arbitrary",
+      "modify",
+      "buffer overflow",
+      "use-after-free",
+      "memory corruption"
+    ],
+    "L": [
+      "cross-site scripting",
+      "xss",
+      "inject arbitrary web script",
+      "html injection",
+      "spoof",
+      "spoofing",
+      "open redirect",
+      "redirect users",
+      "content spoofing",
+      "log injection",
+      "arbitrary web script"
+    ],
+    "N": [
+      "denial of service",
+      "obtain sensitive information",
+      "information disclosure",
+      "read arbitrary files",
+      "crash",
+      "cleartext",
+      "enumerate",
+      "disclose",
+      "out-of-bounds read",
+      "information exposure",
+      "consume",
+      "infinite loop",
+      "null pointer dereference"
+    ]
+  },
+  "all_cues": [
+    "arbitrary code execution",
+    "arbitrary file upload",
+    "arbitrary file write",
+    "arbitrary web script",
+    "buffer overflow",
+    "cleartext",
+    "code execution",
+    "command injection",
+    "consume",
+    "content spoofing",
+    "crash",
+    "cross-site scripting",
+    "delete arbitrary",
+    "denial of service",
+    "disclose",
+    "enumerate",
+    "execute arbitrary code",
+    "execute arbitrary commands",
+    "gain privileges",
+    "html injection",
+    "infinite loop",
+    "information disclosure",
+    "information exposure",
+    "inject arbitrary web script",
+    "log injection",
+    "memory corruption",
+    "modify",
+    "null pointer dereference",
+    "obtain sensitive information",
+    "open redirect",
+    "out-of-bounds read",
+    "overwrite",
+    "privilege escalation",
+    "read arbitrary files",
+    "redirect users",
+    "remote code execution",
+    "spoof",
+    "spoofing",
+    "sql injection",
+    "unrestricted upload",
+    "upload arbitrary files",
+    "use-after-free",
+    "write arbitrary files",
+    "xss"
+  ],
+  "decision_tree": [
+    {
+      "question": "Can the attacker modify any data / files (total loss of integrity)?",
+      "label": "H",
+      "kept": [
+        {
+          "cue": "execute arbitrary code",
+          "support": 5835,
+          "precision": 0.918,
+          "lift": 1.86
+        },
+        {
+          "cue": "arbitrary code execution",
+          "support": 1935,
+          "precision": 0.973,
+          "lift": 1.97
+        },
+        {
+          "cue": "remote code execution",
+          "support": 3777,
+          "precision": 0.975,
+          "lift": 1.97
+        },
+        {
+          "cue": "code execution",
+          "support": 7057,
+          "precision": 0.964,
+          "lift": 1.95
+        },
+        {
+          "cue": "command injection",
+          "support": 2084,
+          "precision": 0.981,
+          "lift": 1.98
+        },
+        {
+          "cue": "execute arbitrary commands",
+          "support": 900,
+          "precision": 0.983,
+          "lift": 1.99
+        },
+        {
+          "cue": "write arbitrary files",
+          "support": 82,
+          "precision": 0.963,
+          "lift": 1.95
+        },
+        {
+          "cue": "arbitrary file write",
+          "support": 87,
+          "precision": 0.966,
+          "lift": 1.95
+        },
+        {
+          "cue": "overwrite",
+          "support": 621,
+          "precision": 0.873,
+          "lift": 1.77
+        },
+        {
+          "cue": "upload arbitrary files",
+          "support": 155,
+          "precision": 0.955,
+          "lift": 1.93
+        },
+        {
+          "cue": "arbitrary file upload",
+          "support": 327,
+          "precision": 0.936,
+          "lift": 1.89
+        },
+        {
+          "cue": "unrestricted upload",
+          "support": 225,
+          "precision": 0.956,
+          "lift": 1.93
+        },
+        {
+          "cue": "gain privileges",
+          "support": 746,
+          "precision": 0.968,
+          "lift": 1.96
+        },
+        {
+          "cue": "privilege escalation",
+          "support": 1449,
+          "precision": 0.932,
+          "lift": 1.89
+        },
+        {
+          "cue": "sql injection",
+          "support": 4890,
+          "precision": 0.871,
+          "lift": 1.76
+        },
+        {
+          "cue": "delete arbitrary",
+          "support": 260,
+          "precision": 0.819,
+          "lift": 1.66
+        },
+        {
+          "cue": "modify",
+          "support": 1516,
+          "precision": 0.73,
+          "lift": 1.48
+        },
+        {
+          "cue": "buffer overflow",
+          "support": 5033,
+          "precision": 0.767,
+          "lift": 1.55
+        },
+        {
+          "cue": "use-after-free",
+          "support": 1152,
+          "precision": 0.734,
+          "lift": 1.48
+        },
+        {
+          "cue": "memory corruption",
+          "support": 2756,
+          "precision": 0.917,
+          "lift": 1.86
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "question": "Can the attacker modify only some data, with limited consequences?",
+      "label": "L",
+      "kept": [
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.981,
+          "lift": 5.04
+        },
+        {
+          "cue": "xss",
+          "support": 10029,
+          "precision": 0.972,
+          "lift": 4.99
+        },
+        {
+          "cue": "inject arbitrary web script",
+          "support": 939,
+          "precision": 0.998,
+          "lift": 5.12
+        },
+        {
+          "cue": "html injection",
+          "support": 161,
+          "precision": 0.888,
+          "lift": 4.56
+        },
+        {
+          "cue": "spoof",
+          "support": 487,
+          "precision": 0.306,
+          "lift": 1.57
+        },
+        {
+          "cue": "spoofing",
+          "support": 416,
+          "precision": 0.428,
+          "lift": 2.2
+        },
+        {
+          "cue": "open redirect",
+          "support": 404,
+          "precision": 0.923,
+          "lift": 4.74
+        },
+        {
+          "cue": "redirect users",
+          "support": 136,
+          "precision": 0.86,
+          "lift": 4.42
+        },
+        {
+          "cue": "content spoofing",
+          "support": 15,
+          "precision": 0.8,
+          "lift": 4.11
+        },
+        {
+          "cue": "log injection",
+          "support": 13,
+          "precision": 0.462,
+          "lift": 2.37
+        },
+        {
+          "cue": "arbitrary web script",
+          "support": 1029,
+          "precision": 0.998,
+          "lift": 5.12
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "csrf",
+          "support": 2840,
+          "precision": 0.174,
+          "lift": 0.89,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "cross-site request forgery",
+          "support": 1931,
+          "precision": 0.192,
+          "lift": 0.99,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Is no data modified at all?",
+      "label": "N",
+      "kept": [
+        {
+          "cue": "denial of service",
+          "support": 11301,
+          "precision": 0.713,
+          "lift": 2.29
+        },
+        {
+          "cue": "obtain sensitive information",
+          "support": 1382,
+          "precision": 0.792,
+          "lift": 2.55
+        },
+        {
+          "cue": "information disclosure",
+          "support": 3763,
+          "precision": 0.861,
+          "lift": 2.77
+        },
+        {
+          "cue": "read arbitrary files",
+          "support": 401,
+          "precision": 0.868,
+          "lift": 2.79
+        },
+        {
+          "cue": "crash",
+          "support": 4493,
+          "precision": 0.728,
+          "lift": 2.34
+        },
+        {
+          "cue": "cleartext",
+          "support": 510,
+          "precision": 0.667,
+          "lift": 2.14
+        },
+        {
+          "cue": "enumerate",
+          "support": 226,
+          "precision": 0.92,
+          "lift": 2.96
+        },
+        {
+          "cue": "disclose",
+          "support": 692,
+          "precision": 0.905,
+          "lift": 2.91
+        },
+        {
+          "cue": "out-of-bounds read",
+          "support": 1293,
+          "precision": 0.712,
+          "lift": 2.29
+        },
+        {
+          "cue": "information exposure",
+          "support": 267,
+          "precision": 0.884,
+          "lift": 2.84
+        },
+        {
+          "cue": "consume",
+          "support": 252,
+          "precision": 0.972,
+          "lift": 3.13
+        },
+        {
+          "cue": "infinite loop",
+          "support": 359,
+          "precision": 0.989,
+          "lift": 3.18
+        },
+        {
+          "cue": "null pointer dereference",
+          "support": 1245,
+          "precision": 0.876,
+          "lift": 2.82
+        }
+      ],
+      "dropped": []
+    }
+  ]
+}

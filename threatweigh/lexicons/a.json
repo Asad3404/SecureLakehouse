@@ -1,0 +1,378 @@
+{
+  "metric": "a",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "H": [
+      "denial of service",
+      "crash",
+      "dos",
+      "consume",
+      "resource consumption",
+      "cpu consumption",
+      "memory consumption",
+      "infinite loop",
+      "null pointer dereference",
+      "reboot",
+      "hang",
+      "kernel panic",
+      "assertion failure",
+      "deadlock",
+      "execute arbitrary code",
+      "remote code execution",
+      "buffer overflow",
+      "use-after-free",
+      "memory corruption",
+      "out-of-bounds write",
+      "stack overflow"
+    ],
+    "L": [
+      "degrade",
+      "degradation",
+      "partial denial of service",
+      "slow",
+      "temporarily",
+      "limited denial",
+      "performance",
+      "intermittent"
+    ],
+    "N": [
+      "cross-site scripting",
+      "xss",
+      "inject arbitrary web script",
+      "obtain sensitive information",
+      "information disclosure",
+      "open redirect",
+      "spoof",
+      "html injection",
+      "information exposure",
+      "sensitive information",
+      "cleartext"
+    ]
+  },
+  "all_cues": [
+    "assertion failure",
+    "buffer overflow",
+    "cleartext",
+    "consume",
+    "cpu consumption",
+    "crash",
+    "cross-site scripting",
+    "deadlock",
+    "degradation",
+    "degrade",
+    "denial of service",
+    "dos",
+    "execute arbitrary code",
+    "hang",
+    "html injection",
+    "infinite loop",
+    "information disclosure",
+    "information exposure",
+    "inject arbitrary web script",
+    "intermittent",
+    "kernel panic",
+    "limited denial",
+    "memory consumption",
+    "memory corruption",
+    "null pointer dereference",
+    "obtain sensitive information",
+    "open redirect",
+    "out-of-bounds write",
+    "partial denial of service",
+    "performance",
+    "reboot",
+    "remote code execution",
+    "resource consumption",
+    "sensitive information",
+    "slow",
+    "spoof",
+    "stack overflow",
+    "temporarily",
+    "use-after-free",
+    "xss"
+  ],
+  "decision_tree": [
+    {
+      "question": "Can the attacker fully deny access to the component (crash, hang, exhaust resources)?",
+      "label": "H",
+      "kept": [
+        {
+          "cue": "denial of service",
+          "support": 11301,
+          "precision": 0.933,
+          "lift": 1.62
+        },
+        {
+          "cue": "crash",
+          "support": 4493,
+          "precision": 0.974,
+          "lift": 1.7
+        },
+        {
+          "cue": "dos",
+          "support": 3316,
+          "precision": 0.853,
+          "lift": 1.48
+        },
+        {
+          "cue": "consume",
+          "support": 252,
+          "precision": 0.754,
+          "lift": 1.31
+        },
+        {
+          "cue": "resource consumption",
+          "support": 197,
+          "precision": 0.914,
+          "lift": 1.59
+        },
+        {
+          "cue": "cpu consumption",
+          "support": 75,
+          "precision": 0.973,
+          "lift": 1.69
+        },
+        {
+          "cue": "memory consumption",
+          "support": 239,
+          "precision": 0.971,
+          "lift": 1.69
+        },
+        {
+          "cue": "infinite loop",
+          "support": 359,
+          "precision": 0.975,
+          "lift": 1.7
+        },
+        {
+          "cue": "null pointer dereference",
+          "support": 1245,
+          "precision": 0.982,
+          "lift": 1.71
+        },
+        {
+          "cue": "reboot",
+          "support": 381,
+          "precision": 0.929,
+          "lift": 1.62
+        },
+        {
+          "cue": "hang",
+          "support": 702,
+          "precision": 0.983,
+          "lift": 1.71
+        },
+        {
+          "cue": "kernel panic",
+          "support": 61,
+          "precision": 1.0,
+          "lift": 1.74
+        },
+        {
+          "cue": "assertion failure",
+          "support": 157,
+          "precision": 0.968,
+          "lift": 1.68
+        },
+        {
+          "cue": "deadlock",
+          "support": 46,
+          "precision": 0.935,
+          "lift": 1.63
+        },
+        {
+          "cue": "execute arbitrary code",
+          "support": 5835,
+          "precision": 0.921,
+          "lift": 1.6
+        },
+        {
+          "cue": "remote code execution",
+          "support": 3777,
+          "precision": 0.976,
+          "lift": 1.7
+        },
+        {
+          "cue": "buffer overflow",
+          "support": 5033,
+          "precision": 0.967,
+          "lift": 1.68
+        },
+        {
+          "cue": "use-after-free",
+          "support": 1152,
+          "precision": 0.96,
+          "lift": 1.67
+        },
+        {
+          "cue": "memory corruption",
+          "support": 2756,
+          "precision": 0.981,
+          "lift": 1.71
+        },
+        {
+          "cue": "out-of-bounds write",
+          "support": 828,
+          "precision": 0.973,
+          "lift": 1.69
+        },
+        {
+          "cue": "stack overflow",
+          "support": 874,
+          "precision": 0.991,
+          "lift": 1.72
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "question": "Is availability only reduced (slower, partial, temporary)?",
+      "label": "L",
+      "kept": [
+        {
+          "cue": "degrade",
+          "support": 6,
+          "precision": 0.333,
+          "lift": 15.04
+        },
+        {
+          "cue": "degradation",
+          "support": 18,
+          "precision": 0.222,
+          "lift": 10.03
+        },
+        {
+          "cue": "partial denial of service",
+          "support": 386,
+          "precision": 0.974,
+          "lift": 43.96
+        },
+        {
+          "cue": "slow",
+          "support": 57,
+          "precision": 0.281,
+          "lift": 12.67
+        },
+        {
+          "cue": "temporarily",
+          "support": 145,
+          "precision": 0.2,
+          "lift": 9.03
+        },
+        {
+          "cue": "limited denial",
+          "support": 19,
+          "precision": 0.947,
+          "lift": 42.76
+        },
+        {
+          "cue": "performance",
+          "support": 235,
+          "precision": 0.081,
+          "lift": 3.65
+        },
+        {
+          "cue": "intermittent",
+          "support": 5,
+          "precision": 0.2,
+          "lift": 9.03
+        }
+      ],
+      "dropped": []
+    },
+    {
+      "question": "Is availability not affected at all?",
+      "label": "N",
+      "kept": [
+        {
+          "cue": "cross-site scripting",
+          "support": 7989,
+          "precision": 0.984,
+          "lift": 2.44
+        },
+        {
+          "cue": "xss",
+          "support": 10029,
+          "precision": 0.975,
+          "lift": 2.42
+        },
+        {
+          "cue": "inject arbitrary web script",
+          "support": 939,
+          "precision": 1.0,
+          "lift": 2.48
+        },
+        {
+          "cue": "obtain sensitive information",
+          "support": 1382,
+          "precision": 0.831,
+          "lift": 2.06
+        },
+        {
+          "cue": "information disclosure",
+          "support": 3763,
+          "precision": 0.848,
+          "lift": 2.1
+        },
+        {
+          "cue": "open redirect",
+          "support": 404,
+          "precision": 0.983,
+          "lift": 2.44
+        },
+        {
+          "cue": "spoof",
+          "support": 487,
+          "precision": 0.854,
+          "lift": 2.12
+        },
+        {
+          "cue": "html injection",
+          "support": 161,
+          "precision": 0.925,
+          "lift": 2.3
+        },
+        {
+          "cue": "information exposure",
+          "support": 267,
+          "precision": 0.873,
+          "lift": 2.16
+        },
+        {
+          "cue": "sensitive information",
+          "support": 4067,
+          "precision": 0.842,
+          "lift": 2.09
+        },
+        {
+          "cue": "cleartext",
+          "support": 510,
+          "precision": 0.706,
+          "lift": 1.75
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "csrf",
+          "support": 2840,
+          "precision": 0.316,
+          "lift": 0.78,
+          "reason": "unreliable"
+        },
+        {
+          "cue": "cross-site request forgery",
+          "support": 1931,
+          "precision": 0.3,
+          "lift": 0.74,
+          "reason": "unreliable"
+        }
+      ]
+    }
+  ]
+}

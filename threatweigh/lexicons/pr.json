@@ -1,0 +1,451 @@
+{
+  "metric": "pr",
+  "built_from": "training split only (109,991 descriptions)",
+  "frozen": true,
+  "rule": {
+    "min_support": 5,
+    "min_precision": 0.5,
+    "min_lift": 1.5
+  },
+  "cues_by_label": {
+    "H": [
+      "administrator",
+      "administrators",
+      "admin",
+      "administrative",
+      "high privileges",
+      "high-privileged",
+      "highly privileged",
+      "privileged user",
+      "root privileges",
+      "root access",
+      "admin privileges",
+      "admin access",
+      "superuser",
+      "privileged account",
+      "admin panel",
+      "administrative privileges",
+      "admin users"
+    ],
+    "L": [
+      "authenticated user",
+      "authenticated users",
+      "remote authenticated",
+      "authenticated attacker",
+      "low-privileged",
+      "low privileged",
+      "low-privilege",
+      "logged-in",
+      "local users",
+      "local user",
+      "standard user",
+      "registered user",
+      "normal user",
+      "regular user",
+      "subscriber",
+      "contributor",
+      "authenticated",
+      "user account",
+      "valid account"
+    ],
+    "N": [
+      "unauthenticated",
+      "without authentication",
+      "anonymous",
+      "unauthorized",
+      "no authentication",
+      "pre-auth",
+      "missing authentication",
+      "authentication bypass",
+      "bypass authentication",
+      "without login",
+      "without logging in",
+      "remote attackers",
+      "not authenticated"
+    ]
+  },
+  "all_cues": [
+    "admin",
+    "admin access",
+    "admin panel",
+    "admin privileges",
+    "admin users",
+    "administrative",
+    "administrative privileges",
+    "administrator",
+    "administrators",
+    "anonymous",
+    "authenticated",
+    "authenticated attacker",
+    "authenticated user",
+    "authenticated users",
+    "authentication bypass",
+    "bypass authentication",
+    "contributor",
+    "high privileges",
+    "high-privileged",
+    "highly privileged",
+    "local user",
+    "local users",
+    "logged-in",
+    "low privileged",
+    "low-privilege",
+    "low-privileged",
+    "missing authentication",
+    "no authentication",
+    "normal user",
+    "not authenticated",
+    "pre-auth",
+    "privileged account",
+    "privileged user",
+    "registered user",
+    "regular user",
+    "remote attackers",
+    "remote authenticated",
+    "root access",
+    "root privileges",
+    "standard user",
+    "subscriber",
+    "superuser",
+    "unauthenticated",
+    "unauthorized",
+    "user account",
+    "valid account",
+    "without authentication",
+    "without logging in",
+    "without login"
+  ],
+  "decision_tree": [
+    {
+      "question": "Does the attacker need administrator / root / high privileges?",
+      "label": "H",
+      "kept": [
+        {
+          "cue": "administrator",
+          "support": 2163,
+          "precision": 0.328,
+          "lift": 3.99
+        },
+        {
+          "cue": "administrators",
+          "support": 680,
+          "precision": 0.535,
+          "lift": 6.51
+        },
+        {
+          "cue": "admin",
+          "support": 5082,
+          "precision": 0.379,
+          "lift": 4.6
+        },
+        {
+          "cue": "administrative",
+          "support": 1036,
+          "precision": 0.358,
+          "lift": 4.35
+        },
+        {
+          "cue": "high privileges",
+          "support": 130,
+          "precision": 0.777,
+          "lift": 9.45
+        },
+        {
+          "cue": "high-privileged",
+          "support": 72,
+          "precision": 0.778,
+          "lift": 9.46
+        },
+        {
+          "cue": "highly privileged",
+          "support": 30,
+          "precision": 0.533,
+          "lift": 6.49
+        },
+        {
+          "cue": "privileged user",
+          "support": 639,
+          "precision": 0.554,
+          "lift": 6.74
+        },
+        {
+          "cue": "root privileges",
+          "support": 497,
+          "precision": 0.294,
+          "lift": 3.57
+        },
+        {
+          "cue": "root access",
+          "support": 208,
+          "precision": 0.125,
+          "lift": 1.52
+        },
+        {
+          "cue": "admin privileges",
+          "support": 143,
+          "precision": 0.531,
+          "lift": 6.46
+        },
+        {
+          "cue": "admin access",
+          "support": 68,
+          "precision": 0.353,
+          "lift": 4.29
+        },
+        {
+          "cue": "superuser",
+          "support": 55,
+          "precision": 0.291,
+          "lift": 3.54
+        },
+        {
+          "cue": "privileged account",
+          "support": 38,
+          "precision": 0.211,
+          "lift": 2.56
+        },
+        {
+          "cue": "admin panel",
+          "support": 161,
+          "precision": 0.36,
+          "lift": 4.38
+        },
+        {
+          "cue": "administrative privileges",
+          "support": 235,
+          "precision": 0.523,
+          "lift": 6.36
+        },
+        {
+          "cue": "admin users",
+          "support": 66,
+          "precision": 0.545,
+          "lift": 6.63
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "system privileges",
+          "support": 231,
+          "precision": 0.1,
+          "lift": 1.21,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Does the attacker need an ordinary logged-in account (basic user rights)?",
+      "label": "L",
+      "kept": [
+        {
+          "cue": "authenticated user",
+          "support": 2118,
+          "precision": 0.789,
+          "lift": 2.68
+        },
+        {
+          "cue": "authenticated users",
+          "support": 1468,
+          "precision": 0.879,
+          "lift": 2.99
+        },
+        {
+          "cue": "remote authenticated",
+          "support": 1610,
+          "precision": 0.832,
+          "lift": 2.83
+        },
+        {
+          "cue": "authenticated attacker",
+          "support": 1257,
+          "precision": 0.844,
+          "lift": 2.87
+        },
+        {
+          "cue": "low-privileged",
+          "support": 380,
+          "precision": 0.984,
+          "lift": 3.35
+        },
+        {
+          "cue": "low privileged",
+          "support": 1179,
+          "precision": 0.995,
+          "lift": 3.38
+        },
+        {
+          "cue": "low-privilege",
+          "support": 57,
+          "precision": 0.912,
+          "lift": 3.1
+        },
+        {
+          "cue": "logged-in",
+          "support": 155,
+          "precision": 0.477,
+          "lift": 1.62
+        },
+        {
+          "cue": "local users",
+          "support": 1343,
+          "precision": 0.847,
+          "lift": 2.88
+        },
+        {
+          "cue": "local user",
+          "support": 726,
+          "precision": 0.824,
+          "lift": 2.8
+        },
+        {
+          "cue": "standard user",
+          "support": 30,
+          "precision": 0.9,
+          "lift": 3.06
+        },
+        {
+          "cue": "registered user",
+          "support": 28,
+          "precision": 0.5,
+          "lift": 1.7
+        },
+        {
+          "cue": "normal user",
+          "support": 64,
+          "precision": 0.828,
+          "lift": 2.81
+        },
+        {
+          "cue": "regular user",
+          "support": 65,
+          "precision": 0.908,
+          "lift": 3.09
+        },
+        {
+          "cue": "subscriber",
+          "support": 259,
+          "precision": 0.849,
+          "lift": 2.89
+        },
+        {
+          "cue": "contributor",
+          "support": 526,
+          "precision": 0.987,
+          "lift": 3.35
+        },
+        {
+          "cue": "authenticated",
+          "support": 8809,
+          "precision": 0.753,
+          "lift": 2.56
+        },
+        {
+          "cue": "user account",
+          "support": 336,
+          "precision": 0.473,
+          "lift": 1.61
+        },
+        {
+          "cue": "valid account",
+          "support": 9,
+          "precision": 0.667,
+          "lift": 2.27
+        }
+      ],
+      "dropped": [
+        {
+          "cue": "logged in",
+          "support": 521,
+          "precision": 0.311,
+          "lift": 1.06,
+          "reason": "unreliable"
+        }
+      ]
+    },
+    {
+      "question": "Can the attacker do it without any account or login?",
+      "label": "N",
+      "kept": [
+        {
+          "cue": "unauthenticated",
+          "support": 7235,
+          "precision": 0.976,
+          "lift": 1.57
+        },
+        {
+          "cue": "without authentication",
+          "support": 284,
+          "precision": 0.919,
+          "lift": 1.47
+        },
+        {
+          "cue": "anonymous",
+          "support": 140,
+          "precision": 0.886,
+          "lift": 1.42
+        },
+        {
+          "cue": "unauthorized",
+          "support": 4507,
+          "precision": 0.501,
+          "lift": 0.8
+        },
+        {
+          "cue": "no authentication",
+          "support": 68,
+          "precision": 0.882,
+          "lift": 1.42
+        },
+        {
+          "cue": "pre-auth",
+          "support": 14,
+          "precision": 1.0,
+          "lift": 1.6
+        },
+        {
+          "cue": "missing authentication",
+          "support": 113,
+          "precision": 0.876,
+          "lift": 1.41
+        },
+        {
+          "cue": "authentication bypass",
+          "support": 592,
+          "precision": 0.85,
+          "lift": 1.36
+        },
+        {
+          "cue": "bypass authentication",
+          "support": 367,
+          "precision": 0.91,
+          "lift": 1.46
+        },
+        {
+          "cue": "without login",
+          "support": 10,
+          "precision": 1.0,
+          "lift": 1.6
+        },
+        {
+          "cue": "without logging in",
+          "support": 18,
+          "precision": 1.0,
+          "lift": 1.6
+        },
+        {
+          "cue": "remote attackers",
+          "support": 8098,
+          "precision": 0.906,
+          "lift": 1.45
+        },
+        {
+          "cue": "not authenticated",
+          "support": 7,
+          "precision": 0.857,
+          "lift": 1.37
+        }
+      ],
+      "dropped": []
+    }
+  ]
+}
