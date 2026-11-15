@@ -1,4 +1,12 @@
 run,seed,metric,accuracy,macro_precision,macro_recall,macro_f1,score_mse,score_mae
+sbert_mean_budget,42,a,0.851,0.5631,0.579,0.5708,2.7387,1.008
+sbert_mean_budget,42,ac,0.9375,0.4688,0.5,0.4839,2.7387,1.008
+sbert_mean_budget,42,av,0.842,0.3963,0.4114,0.4037,2.7387,1.008
+sbert_mean_budget,42,c,0.8215,0.8193,0.7689,0.7902,2.7387,1.008
+sbert_mean_budget,42,i,0.826,0.8328,0.8083,0.8189,2.7387,1.008
+sbert_mean_budget,42,pr,0.7735,0.7339,0.6091,0.6325,2.7387,1.008
+sbert_mean_budget,42,s,0.9505,0.9594,0.8572,0.8986,2.7387,1.008
+sbert_mean_budget,42,ui,0.909,0.9008,0.8919,0.8961,2.7387,1.008
 tfidf_lr_budget,42,a,0.844,0.7281,0.5896,0.6038,3.3831,1.1246
 tfidf_lr_budget,42,ac,0.95,0.915,0.6149,0.6705,3.3831,1.1246
 tfidf_lr_budget,42,av,0.8655,0.7394,0.4357,0.4682,3.3831,1.1246
@@ -15,3 +23,11 @@ tfidf_lr_fulltrain_budget,42,i,0.877,0.8828,0.8594,0.8698,1.7136,0.6735
 tfidf_lr_fulltrain_budget,42,pr,0.8695,0.8557,0.7853,0.8146,1.7136,0.6735
 tfidf_lr_fulltrain_budget,42,s,0.966,0.9501,0.9231,0.9359,1.7136,0.6735
 tfidf_lr_fulltrain_budget,42,ui,0.9435,0.942,0.9295,0.9353,1.7136,0.6735
+threatweigh_budget,42,a,0.8555,0.5706,0.576,0.5727,2.6114,0.9894
+threatweigh_budget,42,ac,0.9375,0.4688,0.5,0.4839,2.6114,0.9894
+threatweigh_budget,42,av,0.8475,0.4827,0.4519,0.4495,2.6114,0.9894
+threatweigh_budget,42,c,0.821,0.8167,0.7713,0.7907,2.6114,0.9894
+threatweigh_budget,42,i,0.8175,0.8183,0.801,0.8089,2.6114,0.9894
+threatweigh_budget,42,pr,0.776,0.7263,0.606,0.6269,2.6114,0.9894
+threatweigh_budget,42,s,0.949,0.9584,0.8526,0.895,2.6114,0.9894
+threatweigh_budget,42,ui,0.904,0.8928,0.8897,0.8912,2.6114,0.9894
