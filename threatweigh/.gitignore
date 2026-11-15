@@ -6,3 +6,6 @@ data/splits*/
 models/
 __pycache__/
 .pytest_cache/
+# live logs of running jobs
+results/*.log
+results/preds/*/train_log.txt
