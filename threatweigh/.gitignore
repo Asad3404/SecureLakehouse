@@ -1,0 +1,8 @@
+# Raw data and the cloned source repo are large: re-create them with `python -m src.data`.
+data/raw/
+data/cache/
+data/splits*/
+# Trained weights are large; results tables in results/ ARE committed.
+models/
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,111 @@
+# =============================================================================
+# ThreatWeigh: ONE configuration file for every stage of the pipeline.
+# Every script reads this file (src/utils.py -> load_config), so changing a
+# value here changes it everywhere.
+# =============================================================================
+
+seed: 42                      # master random seed (data split, sampling, init)
+seeds: [42, 43, 44]           # seeds used for the multi-seed experiments
+
+paths:
+  raw_zip: data/raw/WSymBert/Nvd/Dataset/final.zip   # from the cloned repo
+  raw_csv: data/raw/nvd/final.csv                    # unzipped
+  splits_dir: data/splits            # random stratified 80/10/10 split
+  temporal_dir: data/splits_temporal # time-aware split (older -> newer)
+  cache_dir: data/cache              # KeyBERT keywords, etc.
+  lexicon_dir: lexicons
+  models_dir: models
+  results_dir: results
+
+data:
+  val_frac: 0.10
+  test_frac: 0.10
+  stratify_on: av                    # the split is stratified on Attack Vector
+  # Time-aware split: train on CVEs published in years <= train_max_year,
+  # validate on val_year, test on CVEs from years >= test_min_year.
+  temporal:
+    train_max_year: 2021
+    val_year: 2022
+    test_min_year: 2023
+
+# The 8 CVSS v3.1 Base metrics and their allowed (single-letter) labels.
+metrics:
+  av: [N, A, L, P]   # Attack Vector: Network, Adjacent, Local, Physical
+  ac: [L, H]         # Attack Complexity: Low, High
+  pr: [N, L, H]      # Privileges Required: None, Low, High
+  ui: [N, R]         # User Interaction: None, Required
+  s:  [U, C]         # Scope: Unchanged, Changed
+  c:  [N, L, H]      # Confidentiality impact
+  i:  [N, L, H]      # Integrity impact
+  a:  [N, L, H]      # Availability impact
+
+model:
+  # The paper does not name its SBERT checkpoint; this is our choice.
+  # Stronger (but ~4x slower) option: sentence-transformers/all-mpnet-base-v2
+  encoder: sentence-transformers/all-MiniLM-L6-v2
+  distilbert: distilbert-base-uncased
+  max_length: 128
+  both_weight: 10        # symbolic weight when a token is in K_exp AND K_mdl
+  one_weight: 1          # symbolic weight when a token is in exactly one set
+  eps: 1.0e-8
+
+keybert:
+  top_n: 5
+  ngram_range: [1, 1]
+  stop_words: null       # no stop-word filtering (as in the paper)
+  use_mmr: false
+
+lexicon:
+  # A hand-written cue is kept only if, on the TRAINING split, it occurs in
+  # >= min_support descriptions and its associated label is the true label in
+  # >= min_precision of them (or it is >= min_lift times the label's base rate).
+  min_support: 5
+  min_precision: 0.5
+  min_lift: 1.5
+
+train:
+  lr: 2.0e-5
+  batch_size: 16
+  epochs: 15
+  patience: 3            # early stopping on validation accuracy
+  weight_decay: 0.01
+  num_threads: 4         # CPU threads for PyTorch
+
+# -----------------------------------------------------------------------------
+# Compute profiles. A profile overrides sample sizes / epochs.
+#   full   : the paper's setting (whole dataset, 15 epochs). Needs a GPU.
+#   budget : the setting used for the numbers reported in results/ (CPU, 4 cores).
+#            Every model sees the SAME fixed stratified subsample.
+#   quick  : smoke test (--quick), a few minutes on CPU.
+# null means "use the whole split".
+# -----------------------------------------------------------------------------
+profiles:
+  full:
+    train_n: null
+    val_n: null
+    test_n: null
+    epochs: 15
+  budget:
+    train_n: 2000
+    val_n: 500
+    test_n: 2000
+    epochs: 3
+    patience: 1
+  quick:
+    train_n: 300
+    val_n: 100
+    test_n: 200
+    epochs: 2
+    patience: 1
+
+explain:
+  n_samples: 500          # test CVEs used for the quantitative checks
+  n_sensitivity: 50       # sensitivity_max is expensive -> smaller subsample
+  ig_steps: 16
+  top_k: 10
+  infidelity_perturbations: 10
+  deletion_steps: 10
+
+bootstrap:
+  n_resamples: 2000
+  ci: 0.95
